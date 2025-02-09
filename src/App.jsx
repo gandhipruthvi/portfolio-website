@@ -17,9 +17,7 @@ export default function App() {
         <Preloader />
         <div className="content">
           <Header />
-          <div
-            style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px" }}
-          >
+          <div style={{ maxWidth: "90%", margin: "0 auto", padding: "20px" }}>
             <Suspense fallback={<div>Loading...</div>}>
               <Routes>
                 <Route path="/" element={<HomePage />} />

@@ -1,11 +1,25 @@
 /* src/_variables.scss */
-$primary-color: #121212;
+$primary-color: #333;
 $secondary-color: #fff;
-$light-bg: #ffffff;
-$dark-bg: #121212;
-$light-text: #333;
-$dark-text: #ffffff;
-$switch-width: 50px;
-$switch-height: 24px;
+$light-bg: #ffffff; // Light mode background
+$dark-bg: #121212; // Dark mode background
+$light-text: #333; // Light mode text
+$dark-text: #ffffff; // Dark mode text
+
+// Magnet Lines Colors
+$magnet-lines-light-line-color: #2196f3; // Blue for light mode
+$magnet-lines-dark-line-color: #ff5722; // Orange for dark mode
+$magnet-lines-light-dot-color: #ffffff; // White for light mode
+$magnet-lines-dark-dot-color: #ffd700; // Gold for dark mode
+
 $font-stack: Arial,
 sans-serif;
+
+// Export variables for use in components
+:root {
+  --primary-color: #{$primary-color};
+  --light-bg: #{$light-bg};
+  --dark-bg: #{$dark-bg};
+  --light-text: #{$light-text};
+  --dark-text: #{$dark-text};
+}
