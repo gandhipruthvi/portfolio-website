@@ -1,0 +1,110 @@
+/* src/pages/HomePage.module.scss */
+@use '../_variables.scss'as vars;
+
+.homePage {
+  padding: 40px 20px;
+}
+
+/* Banner Section */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  padding: 40px 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.bannerContent {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.textSection {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Vertically center the text */
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+  }
+}
+
+.animationSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Ensure the animation fits well */
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Logo Section */
+.logoSection {
+  margin-top: 40px;
+  /* Add spacing between sections */
+  padding: 20px 0;
+  background-color: vars.$light-bg;
+  /* Optional: Add a subtle background */
+  border-top: 1px solid #ddd;
+  /* Horizontal line for separation */
+  border-bottom: 1px solid #ddd;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.logo {
+  width: auto;
+  /* Adjust logo size */
+  height: 25px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
+  }
+}

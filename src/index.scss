@@ -1,0 +1,24 @@
+/* src/index.scss */
+@use './_variables.scss'as vars;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: vars.$font-stack;
+  background-color: vars.$light-bg;
+  color: vars.$light-text;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+  background-color: vars.$dark-bg;
+  color: vars.$dark-text;
+}

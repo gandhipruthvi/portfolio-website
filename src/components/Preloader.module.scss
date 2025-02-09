@@ -1,0 +1,71 @@
+/* src/components/Preloader.module.scss */
+@use '../_variables.scss'as vars;
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$light-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+
+  &.expand {
+    .rings {
+      transform: scale(100);
+      opacity: 0;
+      transition: all 1s ease-in-out;
+    }
+  }
+}
+
+.rings {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring {
+  position: absolute;
+  border: 4px solid transparent;
+  border-top-color: vars.$primary-color;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out;
+
+  &:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    animation-delay: 0.6s;
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
