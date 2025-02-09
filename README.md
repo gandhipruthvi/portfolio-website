@@ -1,7 +1,3 @@
-Here’s a professional and detailed `README.md` file for your GitHub repository. It includes information about the technology used, the purpose of the website, and step-by-step instructions to clone and run the project.
-
----
-
 # Portfolio Website
 
 Welcome to my **Portfolio Website**! This is a modern, responsive, and interactive portfolio built using React and Vite. The website showcases my skills, projects, and work experience in a visually appealing way. It also includes cool animations like the **Magnet Lines** effect and a dynamic dark/light mode toggle.
@@ -105,12 +101,6 @@ Follow these steps to clone and run the project on your local machine:
      ```
      http://localhost:5173
      ```
-
-5. **Build for Production** (Optional):
-   To create a production-ready build, run:
-   ```bash
-   npm run build
-   ```
 
 ---
 
