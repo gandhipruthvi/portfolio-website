@@ -1,16 +1,14 @@
 /* src/components/Header.module.scss */
-@use '../_variables.scss'as vars;
+@use '../_variables.scss' as vars;
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: vars.$primary-color;
-  color: vars.$secondary-color;
-  width: 100%;
-  box-sizing: border-box;
-  height: 80px;
+  padding: 20px;
+  background-color: transparent; // Transparent background
+  position: relative;
+  z-index: 1000;
 }
 
 .logoContainer {
@@ -18,64 +16,18 @@
   align-items: center;
 
   .logo {
-    font-size: 24px;
+    font-size: 36px;
     margin-right: 10px;
+    color: var(--light-text); // Dynamic text color
   }
 
   .name {
-    margin: 0;
-    font-size: 20px;
-  }
-}
-
-nav {
-  flex: 1;
-  text-align: right;
-
-  .navList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-
-    .navItem {
-      margin-left: 30px;
-      /* Increased spacing between nav items */
-
-      .navLink {
-        color: vars.$secondary-color;
-        text-decoration: none;
-        font-size: 16px;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #2196f3;
-          /* Hover effect */
-        }
-      }
-    }
+    font-size: 24px;
+    color: var(--light-text); // Dynamic text color
   }
 }
 
 .modeSwitch {
   display: flex;
   align-items: center;
-  margin-left: 20px;
-
-  .Lightswitch {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      transition: transform 0.2s ease;
-      /* Smooth hover effect */
-
-      &:hover {
-        transform: scale(1.1);
-        /* Slightly enlarge on hover */
-      }
-    }
-  }
 }

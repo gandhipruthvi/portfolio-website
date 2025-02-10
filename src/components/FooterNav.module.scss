@@ -1,0 +1,98 @@
+/* src/components/FooterNav.module.scss */
+@use '../_variables.scss' as vars;
+
+.footerNav {
+  position: fixed;
+  bottom: -100px; /* Start off-screen (adjusted for bigger pill) */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smoother animation */
+  z-index: 1000;
+}
+
+.footerNav.visible {
+  bottom: 20px; /* Slide into view */
+}
+
+.footerNav.hidden {
+  bottom: -100px; /* Slide out of view (adjusted for bigger pill) */
+}
+
+.pillContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1); /* Glassmorphism base color */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  border-radius: 50px; /* Pill shape */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+  position: relative;
+  padding: 10px; /* Add some padding around the links */
+
+  /* Adjust for dark mode */
+  body.dark-mode & {
+    background-color: rgba(0, 0, 0, 0.3); /* Dark mode glassmorphism */
+    border-color: rgba(255, 255, 255, 0.1); /* Dark mode border */
+  }
+
+  /* Double-line border effect */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Outer border */
+    border-radius: 50px;
+    pointer-events: none; /* Ensure it doesn't interfere with clicks */
+  }
+
+  &::after {
+    border: 2px solid rgba(255, 255, 255, 0.05); /* Inner border */
+  }
+}
+
+.navLink {
+  color: var(--light-text); /* Dynamic text color */
+  text-decoration: none;
+  font-size: 18px; /* Slightly larger font size */
+  padding: 15px 30px; /* Adjusted padding for better spacing */
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+  flex: 1; /* Allow equal distribution of space */
+  text-align: center; /* Center-align text */
+  min-width: 80px; /* Prevent collapsing too much */
+  flex-basis: 0; /* Start with equal width */
+  border-radius: 0; /* Default no rounding */
+
+  /* Round the edges for the first and last links */
+  &:first-child {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+
+  &:hover {
+    flex-grow: 2; /* Grow the hovered link */
+    color: #2196f3; /* Change text color on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
+    body.dark-mode & {
+      background-color: rgba(255, 255, 255, 0.1); /* Dark mode hover */
+    }
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 30px; /* Increased height for bigger pill */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle divider */
+  body.dark-mode & {
+    background-color: rgba(0, 0, 0, 0.1); /* Divider color in dark mode */
+  }
+}

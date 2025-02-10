@@ -9,6 +9,7 @@ import {
   faPalette,
   faLayerGroup,
 } from "@fortawesome/free-solid-svg-icons";
+import SpotlightCard from "../blocks/Components/SpotlightCard/SpotlightCard"; // Import SpotlightCard
 
 export default function HomePage() {
   const { darkMode } = useContext(DarkModeContext); // Access the darkMode state
@@ -60,37 +61,64 @@ export default function HomePage() {
         <h2 className={styles.sectionTitle}>My Services</h2>
         <div className={styles.servicesContainer}>
           {/* UI/UX Design Card */}
-          <div className={styles.serviceCard}>
-            <FontAwesomeIcon icon={faPenRuler} className={styles.serviceIcon} />
-            <h3>UI/UX Design</h3>
-            <p>
+          <SpotlightCard
+            spotlightColor={darkMode ? "rgba(0, 128, 128, 0.25)" : "rgba(200, 200, 200, 0.25)"}
+            className={darkMode ? "dark-card" : "light-card"}
+          >
+            <FontAwesomeIcon
+              icon={faPenRuler}
+              style={{
+                fontSize: "48px",
+                marginBottom: "15px",
+                color: darkMode ? "#000" : "#fff", // Inverted icon colors
+              }}
+            />
+            <h3 style={{ color: darkMode ? "#000" : "#fff" }}>UI/UX Design</h3>
+            <p style={{ color: darkMode ? "#000" : "#fff" }}>
               Crafting intuitive and user-friendly interfaces for web and mobile
               applications.
             </p>
-          </div>
+          </SpotlightCard>
 
           {/* Branding Card */}
-          <div className={styles.serviceCard}>
-            <FontAwesomeIcon icon={faPalette} className={styles.serviceIcon} />
-            <h3>Branding</h3>
-            <p>
+          <SpotlightCard
+            spotlightColor={darkMode ? "rgba(0, 128, 128, 0.25)" : "rgba(200, 200, 200, 0.25)"}
+            className={darkMode ? "dark-card" : "light-card"}
+          >
+            <FontAwesomeIcon
+              icon={faPalette}
+              style={{
+                fontSize: "48px",
+                marginBottom: "15px",
+                color: darkMode ? "#000" : "#fff", // Inverted icon colors
+              }}
+            />
+            <h3 style={{ color: darkMode ? "#000" : "#fff" }}>Branding</h3>
+            <p style={{ color: darkMode ? "#000" : "#fff" }}>
               Creating unique brand identities that resonate with your target
               audience.
             </p>
-          </div>
+          </SpotlightCard>
 
           {/* Graphic Design Card */}
-          <div className={styles.serviceCard}>
+          <SpotlightCard
+            spotlightColor={darkMode ? "rgba(0, 128, 128, 0.25)" : "rgba(200, 200, 200, 0.25)"}
+            className={darkMode ? "dark-card" : "light-card"}
+          >
             <FontAwesomeIcon
               icon={faLayerGroup}
-              className={styles.serviceIcon}
+              style={{
+                fontSize: "48px",
+                marginBottom: "15px",
+                color: darkMode ? "#000" : "#fff", // Inverted icon colors
+              }}
             />
-            <h3>Graphic Design</h3>
-            <p>
+            <h3 style={{ color: darkMode ? "#000" : "#fff" }}>Graphic Design</h3>
+            <p style={{ color: darkMode ? "#000" : "#fff" }}>
               Designing visually appealing graphics for marketing, social media,
               and print materials.
             </p>
-          </div>
+          </SpotlightCard>
         </div>
       </section>
     </div>

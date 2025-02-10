@@ -6,12 +6,6 @@ $dark-bg: #121212; // Dark mode background
 $light-text: #333; // Light mode text
 $dark-text: #ffffff; // Dark mode text
 
-// Magnet Lines Colors
-$magnet-lines-light-line-color: #2196f3; // Blue for light mode
-$magnet-lines-dark-line-color: #ff5722; // Orange for dark mode
-$magnet-lines-light-dot-color: #ffffff; // White for light mode
-$magnet-lines-dark-dot-color: #ffd700; // Gold for dark mode
-
 $font-stack: Arial,
 sans-serif;
 
@@ -22,4 +16,9 @@ sans-serif;
   --dark-bg: #{$dark-bg};
   --light-text: #{$light-text};
   --dark-text: #{$dark-text};
+}
+
+body.dark-mode {
+  --light-bg: #{$dark-bg};
+  --light-text: #{$dark-text};
 }
