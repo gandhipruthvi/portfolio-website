@@ -106,11 +106,11 @@ export default function Dock({
   items,
   className = "",
   spring = { mass: 0.1, stiffness: 150, damping: 12 },
-  magnification = 70,
-  distance = 200,
-  panelHeight = 59, // Adjusted panelHeight to 59px
-  dockHeight = 256,
-  baseItemSize = 50,
+  magnification = 90, // Increased magnification for bigger buttons
+  distance = 250, // Adjusted distance for smoother scaling
+  panelHeight = 80, // Increased panelHeight for more space
+  dockHeight = 300, // Increased dockHeight for bigger items
+  baseItemSize = 70, // Increased base item size
 }) {
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
@@ -124,7 +124,6 @@ export default function Dock({
   // Scroll-based visibility logic
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
@@ -136,7 +135,6 @@ export default function Dock({
       }
       setLastScrollY(window.scrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
@@ -146,7 +144,7 @@ export default function Dock({
       style={{
         height,
         scrollbarWidth: "none",
-        bottom: isVisible ? "0.5rem" : "-4.5rem", // Keep top part of the dock visible
+        bottom: isVisible ? "1rem" : "-7.5rem", // Adjusted for larger dock
         transition: "bottom 0.4s ease", // Smooth transition
       }}
       className="dock-outer"
