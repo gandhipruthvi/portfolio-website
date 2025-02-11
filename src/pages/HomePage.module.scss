@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   min-height: 500px;
-  padding: 40px 0;
+  padding: 0;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -65,7 +65,7 @@
 
 /* Logo Section */
 .logoSection {
-  margin-top: 40px;
+  margin-top: 150px;
   padding: 50px 0;
   background-color: var(--light-bg); // Dynamic background
   border-top: 1px solid #ddd;
@@ -102,24 +102,85 @@
 
 /* Services Section */
 .servicesSection {
-  margin-top: 100px; /* Increased margin */
+  margin-top: 150px;
+  /* Increased margin */
   text-align: center;
 }
 
 .sectionTitle {
-  font-size: 48px; /* Bigger heading */
+  font-size: 48px;
+  /* Bigger heading */
   margin-bottom: 40px;
   color: var(--light-text); // Dynamic text color
 }
 
 .servicesContainer {
   display: flex;
-  justify-content: space-between; /* Ensure equal spacing between cards */
+  justify-content: space-between;
+  /* Ensure equal spacing between cards */
   align-items: stretch;
-  gap: 20px; /* Add spacing between cards */
+  gap: 20px;
+  /* Add spacing between cards */
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Stack cards vertically on smaller screens */
+    flex-direction: column;
+    /* Stack cards vertically on smaller screens */
     align-items: center;
+  }
+}
+
+
+// Latest Work Section
+.latestWorkSection {
+  margin-top: 150px;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.latestWorkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 2 columns */
+  gap: 2rem;
+  justify-content: center;
+}
+
+.projectWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.projectDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+}
+
+.projectTitle {
+  font-size: 14px;
+  /* Smaller font size */
+  color: var(--light-text);
+  /* Dynamic text color */
+  margin: 0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .latestWorkGrid {
+    grid-template-columns: 1fr;
+    /* Single column on smaller screens */
+  }
+
+  .projectDetails {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 }

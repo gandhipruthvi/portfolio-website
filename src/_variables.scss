@@ -1,13 +1,15 @@
 /* src/_variables.scss */
-$primary-color: #333;
-$secondary-color: #fff;
+$primary-color: #333; // Base dark color
+$secondary-color: #fff; // Base light color
+$tint-color: #0074D9; // Consistent blue tint color
 $light-bg: #ffffff; // Light mode background
 $dark-bg: #121212; // Dark mode background
 $light-text: #333; // Light mode text
 $dark-text: #ffffff; // Dark mode text
-
-$font-stack: Arial,
-sans-serif;
+$border-color-light: #444; // Dark border for light mode
+$border-color-dark: #ddd; // Light border for dark mode
+$icon-color-light: #595959; // Light mode icon color (blended)
+$icon-color-dark: #d6d6d6; // Dark mode icon color (blended)
 
 // Export variables for use in components
 :root {
@@ -16,9 +18,20 @@ sans-serif;
   --dark-bg: #{$dark-bg};
   --light-text: #{$light-text};
   --dark-text: #{$dark-text};
+  --border-color: #{$border-color-light}; // Dark border for light mode
+  --icon-color: #{$icon-color-light}; // Icon color for light mode
+  --tint-color: #{$tint-color}; // Tint color (blue)
+  --spotlight-color: rgba(255, 255, 255, 0.05); // Spotlight color for light mode
 }
 
 body.dark-mode {
   --light-bg: #{$dark-bg};
   --light-text: #{$dark-text};
+  --border-color: #{$border-color-dark}; // Light border for dark mode
+  --spotlight-color: rgba(108, 108, 108, 0.5); // Spotlight color for dark mode
+  --icon-color: #{$icon-color-dark}; // Icon color for dark mode
 }
+
+$font-stack: "Poppins",
+Arial,
+sans-serif;

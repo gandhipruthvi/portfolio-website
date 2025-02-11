@@ -2,8 +2,14 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import FooterNav from "./components/FooterNav"; // Import the new floating navigation bar
-import Preloader from "./components/Preloader";
+import Dock from "./blocks/Components/Dock/Dock"; // Import the Dock component
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faUser,
+  faBriefcase,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import "./App.module.scss";
 
 // Lazy load pages
@@ -16,9 +22,6 @@ export default function App() {
   return (
     <Router>
       <div style={{ width: "100%" }}>
-        {/* Preloader */}
-        <Preloader />
-
         {/* Main Content */}
         <div className="content">
           {/* Header with Logo and Dark/Light Mode Switch */}
@@ -36,8 +39,31 @@ export default function App() {
             </Suspense>
           </div>
 
-          {/* Floating Navigation Bar */}
-          <FooterNav />
+          {/* New Floating Navigation (Dock) */}
+          <Dock
+            items={[
+              {
+                icon: <FontAwesomeIcon icon={faHouse} />, // Home icon
+                label: "Home",
+                onClick: () => (window.location.href = "/"),
+              },
+              {
+                icon: <FontAwesomeIcon icon={faUser} />, // About icon
+                label: "About",
+                onClick: () => (window.location.href = "/about"),
+              },
+              {
+                icon: <FontAwesomeIcon icon={faBriefcase} />, // Work icon
+                label: "Work",
+                onClick: () => (window.location.href = "/work"),
+              },
+              {
+                icon: <FontAwesomeIcon icon={faEnvelope} />, // Contact icon
+                label: "Contact",
+                onClick: () => (window.location.href = "/contact"),
+              },
+            ]}
+          />
         </div>
       </div>
     </Router>

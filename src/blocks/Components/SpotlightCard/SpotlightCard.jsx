@@ -1,17 +1,7 @@
-/*
-	jsrepo 1.34.0
-	Installed from https://reactbits.dev/default/
-	9-2-2025
-*/
-
 import { useRef } from "react";
 import "./SpotlightCard.css";
 
-const SpotlightCard = ({
-  children,
-  className = "",
-  spotlightColor = "rgba(255, 255, 255, 0.25)",
-}) => {
+const SpotlightCard = ({ children, className = "" }) => {
   const divRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -19,9 +9,9 @@ const SpotlightCard = ({
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
+    // Update mouse position dynamically
     divRef.current.style.setProperty("--mouse-x", `${x}px`);
     divRef.current.style.setProperty("--mouse-y", `${y}px`);
-    divRef.current.style.setProperty("--spotlight-color", spotlightColor);
   };
 
   return (
