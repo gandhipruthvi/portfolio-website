@@ -14,6 +14,8 @@ import TiltedCard from "../blocks/Components/TiltedCard/TiltedCard"; // Import T
 import Button from "../components/Button"; // Corrected import path
 import { motion } from "framer-motion";
 import SplitText from "../components/SplitText.jsx"; // Import the SplitText component
+import GradientText from "../blocks/TextAnimations/GradientText/GradientText"; // Import the GradientText component
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa"; // Import icons
 
 export default function HomePage() {
   const { darkMode } = useContext(DarkModeContext); // Access the darkMode state
@@ -178,17 +180,23 @@ export default function HomePage() {
         <div className={styles.servicesContainer}>
           {/* UI/UX Design Card */}
           <SpotlightCard>
-            <div className={styles.serviceIcon}>🎨</div>
-            <h3 style={{ color: darkMode ? "#fff" : "#333", fontSize: "24px" }}>
-              UI/UX Design
-            </h3>{" "}
-            {/* White text */}
-            <p style={{ color: darkMode ? "#fff" : "#333", fontSize: "18px" }}>
-              {" "}
+            <div>
+              <div className={styles.serviceIcon}>🎨</div>
+              <h3
+                style={{ color: darkMode ? "#fff" : "#333", fontSize: "24px" }}
+              >
+                UI/UX Design
+              </h3>{" "}
               {/* White text */}
-              Crafting intuitive and user-friendly interfaces for web and mobile
-              applications.
-            </p>
+              <p
+                style={{ color: darkMode ? "#fff" : "#333", fontSize: "18px" }}
+              >
+                {" "}
+                {/* White text */}
+                Crafting intuitive and user-friendly interfaces for web and
+                mobile applications.
+              </p>
+            </div>
           </SpotlightCard>
 
           {/* Branding Card */}
@@ -339,6 +347,61 @@ export default function HomePage() {
             ))}
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* Contact Me Section */}
+      <section className={styles.contactSection}>
+        {/* Gradient Text Heading */}
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={3}
+          showBorder={false}
+          className="font-bold text-center"
+          fontSize="100px" // Set font size explicitly
+        >
+          Let's Work Together!
+        </GradientText>
+        <p
+          className={styles.contactDescription}
+          style={{
+            textAlign: "center",
+            color: darkMode ? "#d4d4d4" : "#595959",
+          }}
+        >
+          I’m always open to new opportunities and collaborations. Feel free to
+          reach out via the options below:
+        </p>
+        <div className={styles.contactOptions}>
+          <a
+            href="mailto:your-email@example.com"
+            className={styles.contactOption}
+          >
+            <FaEnvelope size={24} /> {/* Email Icon */}
+            <span>Email Me</span>
+          </a>
+          <a href="tel:+1234567890" className={styles.contactOption}>
+            <FaPhone size={24} /> {/* Phone Icon */}
+            <span>Call Me</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactOption}
+          >
+            <FaLinkedin size={24} /> {/* LinkedIn Icon */}
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactOption}
+          >
+            <FaGithub size={24} /> {/* GitHub Icon */}
+            <span>GitHub</span>
+          </a>
+        </div>
       </section>
     </div>
   );

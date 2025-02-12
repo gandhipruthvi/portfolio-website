@@ -299,3 +299,84 @@
   color: var(--light-text);
   opacity: 0.8;
 }
+
+
+/* Contact Section */
+.gradientHeading {
+  font-size: 3rem;
+  /* Adjust font size */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contactSection {
+  margin-top: 150px;
+  text-align: center;
+
+  .contactDescription {
+    font-size: 1rem;
+    font-family: "Playfair Display", serif;
+    color: var(--light-text);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+  }
+}
+
+.contactOptions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contactOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--light-text);
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    color: var(--tint-color); // Highlight on hover
+  }
+
+  svg {
+    width: 2.5rem;
+    /* Adjust icon size */
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    font-size: 0.9rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gradientHeading {
+    font-size: 2rem;
+    /* Smaller font size for mobile */
+  }
+
+  .contactOptions {
+    gap: 1rem;
+  }
+
+  .contactOption {
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}
