@@ -1,8 +1,7 @@
 .card-spotlight {
   position: relative;
   border-radius: 1.5rem;
-  border: 1px solid #222; /* Fixed border color */
-  background-color: #111111; /* Fixed background color */
+  border: 1px solid #ddd; /* Fixed border color */
   padding: 2rem;
   overflow: hidden;
   --mouse-x: 50%;
@@ -18,7 +17,7 @@
   bottom: 0;
   background: radial-gradient(
     circle at var(--mouse-x) var(--mouse-y),
-    rgba(0, 229, 255, 0.2),
+    rgba(36, 233, 255, 0.399),
     /* Fixed spotlight color */ transparent 80%
   );
   opacity: 0;

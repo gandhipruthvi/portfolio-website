@@ -1,4 +1,7 @@
 /* src/_variables.scss */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 $primary-color: #333; // Base dark color
 $secondary-color: #fff; // Base light color
 $tint-color: #0074D9; // Consistent blue tint color
@@ -10,6 +13,7 @@ $border-color-light: #444; // Dark border for light mode
 $border-color-dark: #ddd; // Light border for dark mode
 $icon-color-light: #595959; // Light mode icon color (blended)
 $icon-color-dark: #d6d6d6; // Dark mode icon color (blended)
+$title-font-size: 60px;
 
 // Export variables for use in components
 :root {
@@ -22,6 +26,7 @@ $icon-color-dark: #d6d6d6; // Dark mode icon color (blended)
   --icon-color: #{$icon-color-light}; // Icon color for light mode
   --tint-color: #{$tint-color}; // Tint color (blue)
   --spotlight-color: rgba(255, 255, 255, 0.05); // Spotlight color for light mode
+  --title-font-size: #{$title-font-size};
 }
 
 body.dark-mode {
@@ -32,6 +37,5 @@ body.dark-mode {
   --icon-color: #{$icon-color-dark}; // Icon color for dark mode
 }
 
-$font-stack: "Poppins",
-Arial,
-sans-serif;
+$font-stack: "Playfair Display",
+serif;

@@ -37,17 +37,29 @@
   flex-direction: column;
   justify-content: center;
 
-  h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: var(--light-text); // Dynamic text color
-  }
-
   p {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 30px;
     color: var(--light-text); // Dynamic text color
+  }
+
+  /* Responsive Font Sizes */
+  .text80px {
+    font-size: 80px; // Large font size for desktop
+    line-height: 1; // Tight line height for better alignment
+
+    @media (max-width: 768px) {
+      font-size: 48px; // Smaller font size for mobile
+    }
+  }
+
+  .text-lg {
+    font-size: 1rem; // Subtitle size
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem; // Smaller subtitle size for mobile
+    }
   }
 }
 
@@ -105,6 +117,11 @@
   margin-top: 150px;
   /* Increased margin */
   text-align: center;
+
+  h2 {
+    font-size: var(--title-font-size);
+    margin-bottom: 2rem;
+  }
 }
 
 .sectionTitle {
@@ -114,12 +131,23 @@
   color: var(--light-text); // Dynamic text color
 }
 
+.serviceIcon {
+  font-size: 2rem;
+  /* Larger icon size */
+  color: var(--tint-color);
+  /* Use tint color for icons */
+  margin-bottom: 1rem;
+  /* Space between icon and title */
+}
+
+
 .servicesContainer {
   display: flex;
   justify-content: space-between;
   /* Ensure equal spacing between cards */
   align-items: stretch;
   gap: 20px;
+  color: var(--light-text); // Dynamic text color
   /* Add spacing between cards */
 
   @media (max-width: 768px) {
@@ -129,14 +157,13 @@
   }
 }
 
-
 // Latest Work Section
 .latestWorkSection {
   margin-top: 150px;
   text-align: center;
 
   h2 {
-    font-size: 2rem;
+    font-size: var(--title-font-size);
     margin-bottom: 2rem;
   }
 }
@@ -183,4 +210,92 @@
     align-items: flex-start;
     gap: 0.25rem;
   }
+}
+
+
+/* Testimonials Section */
+.testimonialsSection {
+  margin-top: 150px;
+  text-align: center;
+
+  h2 {
+    font-size: var(--title-font-size);
+    margin-bottom: 2rem;
+  }
+}
+
+.testimonialsContainer {
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  scrollbar-width: none;
+  /* Hide scrollbar */
+  -ms-overflow-style: none;
+  /* Hide scrollbar for IE/Edge */
+  margin-top: 2rem;
+  position: relative;
+  cursor: grab;
+}
+
+.testimonialsContainer::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for Chrome/Safari */
+}
+
+.testimonialsSlider {
+  display: flex;
+  gap: 20px;
+  /* Ensure this matches the gap used in the calculation */
+  padding: 1rem 0;
+  min-width: fit-content;
+  /* Ensure the slider doesn't collapse */
+}
+
+.testimonialItem {
+  min-width: 300px;
+  /* Fixed width for each testimonial */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+  /* Frosted glass effect */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.testimonialAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--tint-color);
+  /* Highlight border */
+}
+
+.testimonialQuote {
+  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+  /* Apply Playfair Display */
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
+
+.testimonialName {
+  font-size: 1.1rem;
+  font-family: "Playfair Display", serif;
+  /* Apply Playfair Display */
+  font-weight: 700;
+  /* Bold weight */
+  color: var(--light-text);
+  margin-bottom: 0.5rem;
+}
+
+.testimonialRole {
+  font-size: 0.9rem;
+  font-family: "Playfair Display", serif;
+  /* Apply Playfair Display */
+  color: var(--light-text);
+  opacity: 0.8;
 }
