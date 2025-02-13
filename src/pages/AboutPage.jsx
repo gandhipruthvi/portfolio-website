@@ -15,7 +15,7 @@ export default function AboutPage() {
           />
         </div>
         <div className={styles.introContent}>
-          <h1>Hi, I’m Shivani Rotliwala</h1>
+          <h1>Hi, I’m Shivani</h1>
           <ScrollText
             lines={[
               "I’m a passionate developer who loves building modern, responsive,",

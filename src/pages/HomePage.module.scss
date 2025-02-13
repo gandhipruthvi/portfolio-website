@@ -54,11 +54,33 @@
     }
   }
 
-  .text-lg {
-    font-size: 1rem; // Subtitle size
+  .rotatingSubheading {
+    font-size: 2rem; // Larger font size for the subheading
+    // line-height: 1.6;
+    color: var(--light-text);
 
     @media (max-width: 768px) {
-      font-size: 0.9rem; // Smaller subtitle size for mobile
+      font-size: 1.25rem; // Smaller font size for mobile
+    }
+  }
+
+  .rotatingTextWrapper {
+    display: inline-flex; // Use inline-flex for proper alignment
+    align-items: center; // Align text vertically
+    justify-content: center; // Center text horizontally
+    position: relative; // Required for overflow hidden
+    font-size: 2rem; // Increased font size for rotating text
+    font-weight: bold;
+    white-space: nowrap; // Prevent word wrapping
+    background-color: lightblue;
+    padding: 0 10px; // Padding for the pill effect
+    border-radius: 10px; // Rounded corners
+    overflow: hidden; // Add overflow hidden for the "rotating inside" effect
+    min-width: fit-content; // Ensure the container adjusts to the content width
+    transition: all 0.5s ease; // Smooth transition for background and width
+
+    @media (max-width: 768px) {
+      font-size: 1.75rem; // Smaller font size for mobile
     }
   }
 }

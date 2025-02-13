@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import SplitText from "../components/SplitText.jsx"; // Import the SplitText component
 import GradientText from "../blocks/TextAnimations/GradientText/GradientText"; // Import the GradientText component
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa"; // Import icons
+import RotatingText from "../blocks/TextAnimations/RotatingText/RotatingText"; // Import RotatingText
 
 export default function HomePage() {
   const { darkMode } = useContext(DarkModeContext); // Access the darkMode state
@@ -95,20 +96,38 @@ export default function HomePage() {
               text="Welcome to My Portfolio"
               className={`${styles.text80px} font-bold text-left text-light-text leading-none`} // Apply custom font size
               delay={50} // Adjust delay between letters
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               threshold={0.2}
               rootMargin="-50px"
               onLetterAnimationComplete={handleAnimationComplete}
             />
-            <p
-              className="mt-4 text-lg text-left text-light-text" // Subtitle style
-              style={{ opacity: 0.8 }}
-            >
-              I’m a passionate developer who loves building modern, responsive,
-              and user-friendly websites. Explore my work and feel free to reach
-              out!
+            <p className={styles.rotatingSubheading}>
+              I’m a creative{" "}
+              <span className={styles.rotatingTextWrapper}>
+                <RotatingText
+                  texts={[
+                    "Graphic Designer",
+                    "UI/UX Designer",
+                    "Brand Identity Designer",
+                    "Developer",
+                  ]}
+                  mainClassName="px-4 py-2 bg-cyan-300 text-black rounded-lg text-2xl font-bold whitespace-nowrap overflow-hidden inline-flex items-center justify-center" // Updated styles
+                  staggerFrom={"first"}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: "-120%", opacity: 0 }}
+                  animatePresenceMode={"wait"}
+                  animatePresenceInitial={0}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                />{" "}
+              </span>
+              <br /> {/* Move the next part to a new line */}
+              who strives to deliver exceptional results.
             </p>
           </div>
 
