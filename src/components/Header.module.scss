@@ -1,33 +1,51 @@
 /* src/components/Header.module.scss */
-@use '../_variables.scss' as vars;
 
 .header {
+  position: absolute; // Stick the header to the top
+  top: 0;
+  left: 0;
+  width: 100vw; // Ensure the header spans the full viewport width
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px; // Adjust padding as needed
   background-color: transparent; // Transparent background
-  position: relative;
-  z-index: 1000;
-}
+  z-index: 1000; // Ensure it stays on top of other elements
+  box-sizing: border-box; // Prevent padding from exceeding 100vw
 
-.logoContainer {
-  display: flex;
-  align-items: center;
+  .logoContainer {
+    display: flex;
+    align-items: center;
 
-  .logo {
-    font-size: 36px;
-    margin-right: 10px;
-    color: var(--light-text); // Dynamic text color
+    .logo {
+      font-size: 36px;
+      margin-right: 10px;
+      color: #ffffff; // White text for contrast
+    }
+
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-family: "Vastago Grotesk", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        color: #ffffff; // White text for contrast
+      }
+
+      .designation {
+        font-family: "Vastago Grotesk", sans-serif;
+        font-size: 16px;
+        margin: 0;
+        color: #ffffff; // White text for contrast
+      }
+    }
   }
 
-  .name {
-    font-size: 24px;
-    color: var(--light-text); // Dynamic text color
+  .modeSwitch {
+    display: flex;
+    align-items: center;
   }
-}
-
-.modeSwitch {
-  display: flex;
-  align-items: center;
 }

@@ -28,7 +28,7 @@ export default function App() {
           <Header />
 
           {/* Page Content */}
-          <div style={{ maxWidth: "90%", margin: "0 auto", padding: "20px" }}>
+          <div>
             <Suspense fallback={<div>Loading...</div>}>
               <Routes>
                 <Route path="/" element={<HomePage />} />

@@ -1,7 +1,7 @@
 // src/components/Header.jsx
-import React from 'react';
-import styles from './Header.module.scss';
-import Lightswitch from './Lightswitch';
+import React from "react";
+import styles from "./Header.module.scss";
+import Lightswitch from "./Lightswitch";
 
 export default function Header() {
   return (
@@ -9,7 +9,10 @@ export default function Header() {
       {/* Logo */}
       <div className={styles.logoContainer}>
         <span className={styles.logo}>✨</span>
-        <h1 className={styles.name}>My Portfolio</h1>
+        <div className={styles.textContainer}>
+          <h1 className={styles.name}>Shivani Rotliwala</h1>
+          <p className={styles.designation}>Brand Identity & UI/UX Design</p>
+        </div>
       </div>
 
       {/* Dark/Light Mode Switch */}

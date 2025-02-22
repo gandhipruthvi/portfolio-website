@@ -39,3 +39,11 @@ body.dark-mode {
 
 $font-stack: "Playfair Display",
 serif;
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-Regular.otf") format("otf"),
+    url("/fonts/VastagoGrotesk-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
