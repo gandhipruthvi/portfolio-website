@@ -10,7 +10,7 @@ export default function Header() {
       <div className={styles.logoContainer}>
         <span className={styles.logo}>✨</span>
         <div className={styles.textContainer}>
-          <h1 className={styles.name}>Shivani Rotliwala</h1>
+          <h1 className={styles.name}>Inks & Interfaces</h1>
           <p className={styles.designation}>Brand Identity & UI/UX Design</p>
         </div>
       </div>

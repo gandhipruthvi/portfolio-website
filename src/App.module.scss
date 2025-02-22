@@ -2,6 +2,48 @@
 @use './_variables.scss'as vars;
 
 body {
-  cursor: url("/images/custom-pointer.png"), auto;
-  /* Custom mouse pointer */
+  font-family: "Vastago Grotesk", sans-serif;
+  /* Default font */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  color: var(--light-text);
+  /* Dynamic text color */
+  background-color: var(--light-bg);
+  /* Dynamic background color */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Vastago Grotesk", sans-serif;
+  /* Ensure headings use the same font */
+  font-weight: bold;
+  /* Use bold weight for headings */
+}
+
+p,
+span,
+a,
+button {
+  font-family: "Vastago Grotesk", sans-serif;
+  /* Ensure other elements use the font */
+}
+
+/* Ensure the cursor container is positioned correctly */
+.react-animated-cursor {
+  position: fixed;
+  pointer-events: none;
+  /* Prevent the cursor from interfering with clicks */
+  z-index: 9999;
+  /* Ensure the cursor is on top of all elements */
+}
+
+/* Optional: Add a transition for smoother animations */
+.react-animated-cursor div {
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }

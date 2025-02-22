@@ -55,6 +55,7 @@
 }
 
 .dock-label {
+  font-family: "Vastago Grotesk", sans-serif;
   position: absolute;
   top: -2rem; /* Adjusted for larger dock */
   left: 50%;

@@ -11,6 +11,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import "./App.module.scss";
+import AnimatedCursor from "react-animated-cursor"; // Import the AnimatedCursor
 
 // Lazy load pages
 const HomePage = React.lazy(() => import("./pages/HomePage"));
@@ -24,6 +25,36 @@ export default function App() {
       <div style={{ width: "100%" }}>
         {/* Main Content */}
         <div className="content">
+          {/* Animated Cursor */}
+          <AnimatedCursor
+            innerSize={15} // Inner circle size
+            outerSize={35} // Outer circle size
+            innerScale={1} // Scale factor for the inner circle
+            outerScale={2} // Scale factor for the outer circle
+            outerAlpha={0} // Fully transparent outer circle
+            hasBlendMode={false} // Enable blend mode
+            showSystemCursor={false}
+            innerStyle={{
+              backgroundColor: "var(--cursor-color)", // Dynamic color for the inner circle
+            }}
+            outerStyle={{
+              border: "3px solid var(--cursor-color)", // Dynamic border color for the outer circle
+              mixBlendMode: "exclusion", // Blend mode effect
+            }}
+            clickables={[
+              "a",
+              'input[type="text"]',
+              'input[type="email"]',
+              'input[type="number"]',
+              'input[type="submit"]',
+              'input[type="image"]',
+              "label[for]",
+              "select",
+              "textarea",
+              "button",
+              ".link",
+            ]}
+          />
           {/* Header with Logo and Dark/Light Mode Switch */}
           <Header />
 

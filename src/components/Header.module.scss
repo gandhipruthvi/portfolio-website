@@ -1,26 +1,26 @@
 /* src/components/Header.module.scss */
 
 .header {
-  position: absolute; // Stick the header to the top
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw; // Ensure the header spans the full viewport width
+  width: 97vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px; // Adjust padding as needed
-  background-color: transparent; // Transparent background
-  z-index: 1000; // Ensure it stays on top of other elements
-  box-sizing: border-box; // Prevent padding from exceeding 100vw
+  padding: 20px;
+  background-color: transparent;
+  z-index: 1000;
 
   .logoContainer {
     display: flex;
     align-items: center;
 
     .logo {
+      font-family: "Vastago Grotesk", sans-serif;
       font-size: 36px;
       margin-right: 10px;
-      color: #ffffff; // White text for contrast
+      color: #ffffff;
     }
 
     .textContainer {
@@ -32,14 +32,14 @@
         font-size: 24px;
         font-weight: bold;
         margin: 0;
-        color: #ffffff; // White text for contrast
+        color: #ffffff;
       }
 
       .designation {
         font-family: "Vastago Grotesk", sans-serif;
         font-size: 16px;
         margin: 0;
-        color: #ffffff; // White text for contrast
+        color: #ffffff;
       }
     }
   }

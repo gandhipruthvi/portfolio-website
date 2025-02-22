@@ -1,7 +1,5 @@
 /* src/_variables.scss */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
 $primary-color: #333; // Base dark color
 $secondary-color: #fff; // Base light color
 $tint-color: #0074D9; // Consistent blue tint color
@@ -15,6 +13,7 @@ $icon-color-light: #595959; // Light mode icon color (blended)
 $icon-color-dark: #d6d6d6; // Dark mode icon color (blended)
 $title-font-size: 60px;
 
+
 // Export variables for use in components
 :root {
   --primary-color: #{$primary-color};
@@ -27,6 +26,8 @@ $title-font-size: 60px;
   --tint-color: #{$tint-color}; // Tint color (blue)
   --spotlight-color: rgba(255, 255, 255, 0.05); // Spotlight color for light mode
   --title-font-size: #{$title-font-size};
+  --cursor-color: #ffffff;
+  /* Default cursor color (white) */
 }
 
 body.dark-mode {
@@ -35,6 +36,8 @@ body.dark-mode {
   --border-color: #{$border-color-dark}; // Light border for dark mode
   --spotlight-color: rgba(108, 108, 108, 0.5); // Spotlight color for dark mode
   --icon-color: #{$icon-color-dark}; // Icon color for dark mode
+  --cursor-color: #ff6f61;
+  /* Custom cursor color for dark mode */
 }
 
 $font-stack: "Playfair Display",
@@ -42,8 +45,63 @@ serif;
 
 @font-face {
   font-family: "Vastago Grotesk";
-  src: url("/fonts/VastagoGrotesk-Regular.otf") format("otf"),
-    url("/fonts/VastagoGrotesk-Regular.otf") format("otf");
-  font-weight: normal;
+  src: url("/fonts/VastagoGrotesk-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-Black.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vastago Grotesk";
+  src: url("/fonts/VastagoGrotesk-Heavy.otf") format("opentype");
+  font-weight: 900;
   font-style: normal;
 }

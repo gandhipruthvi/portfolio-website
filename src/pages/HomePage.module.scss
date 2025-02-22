@@ -23,14 +23,14 @@
 
     .bannerHeading {
       font-family: "Vastago Grotesk", sans-serif;
-      font-size: 8vw; // Responsive font size based on viewport width
+      font-size: 8vw;
       font-weight: bold;
-      color: #ffffff; // White text for contrast
+      color: #ffffff;
       margin: 0;
-      line-height: 1.2; // Tight line height for better readability
+      line-height: 1.2;
 
       @media (max-width: 768px) {
-        font-size: 12vw; // Larger font size for smaller screens
+        font-size: 12vw;
       }
     }
   }
