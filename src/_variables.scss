@@ -1,44 +1,36 @@
 /* src/_variables.scss */
 
-$primary-color: #333; // Base dark color
-$secondary-color: #fff; // Base light color
-$tint-color: #0074D9; // Consistent blue tint color
-$light-bg: #ffffff; // Light mode background
-$dark-bg: #121212; // Dark mode background
-$light-text: #333; // Light mode text
-$dark-text: #ffffff; // Dark mode text
-$border-color-light: #444; // Dark border for light mode
-$border-color-dark: #ddd; // Light border for dark mode
-$icon-color-light: #595959; // Light mode icon color (blended)
-$icon-color-dark: #d6d6d6; // Dark mode icon color (blended)
-$title-font-size: 60px;
-
-
-// Export variables for use in components
 :root {
-  --primary-color: #{$primary-color};
-  --light-bg: #{$light-bg};
-  --dark-bg: #{$dark-bg};
-  --light-text: #{$light-text};
-  --dark-text: #{$dark-text};
-  --border-color: #{$border-color-light}; // Dark border for light mode
-  --icon-color: #{$icon-color-light}; // Icon color for light mode
-  --tint-color: #{$tint-color}; // Tint color (blue)
-  --spotlight-color: rgba(255, 255, 255, 0.05); // Spotlight color for light mode
-  --title-font-size: #{$title-font-size};
-  --cursor-color: #ffffff;
-  /* Default cursor color (white) */
+  --light-bg: #ffffff; // Light mode background
+  --dark-bg: #121212; // Dark mode background
+  --light-text: #333333; // Light mode text
+  --dark-text: #ffffff; // Dark mode text
+  --accent-color: #0074d9; // Accent color for buttons, links, etc.
+  --cursor-color: #ff6f61;
+}
+
+body.light-mode {
+  --bg-color: var(--light-bg);
+  --text-color: var(--light-text);
+  --marquee-bg: #f5f5f5; // Light marquee background
+  --marquee-text: #000; // Light marquee text
+  --marquee-hover-bg: #000; // Hover background (black)
+  --marquee-hover-text: #fff; // Hover text (white)
+  --cursor-color: #ff6f61;
 }
 
 body.dark-mode {
-  --light-bg: #{$dark-bg};
-  --light-text: #{$dark-text};
-  --border-color: #{$border-color-dark}; // Light border for dark mode
-  --spotlight-color: rgba(108, 108, 108, 0.5); // Spotlight color for dark mode
-  --icon-color: #{$icon-color-dark}; // Icon color for dark mode
-  --cursor-color: #ff6f61;
-  /* Custom cursor color for dark mode */
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --marquee-bg: #2b2b2b; // Dark marquee background
+  --marquee-text: #fff; // Dark marquee text
+  --marquee-hover-bg: #fff; // Hover background (white)
+  --marquee-hover-text: #000; // Hover text (black)
+  --cursor-color: #ffffff;
 }
+
+
+
 
 $font-stack: "Playfair Display",
 serif;

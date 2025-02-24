@@ -35,7 +35,7 @@ export default function App() {
             hasBlendMode={false} // Enable blend mode
             showSystemCursor={false}
             innerStyle={{
-              backgroundColor: "var(--cursor-color)", // Dynamic color for the inner circle
+              backgroundColor: "var(--text-color)", // Dynamic color for the inner circle
             }}
             outerStyle={{
               border: "3px solid var(--cursor-color)", // Dynamic border color for the outer circle

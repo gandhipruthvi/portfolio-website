@@ -1,21 +1,22 @@
 /* src/styles/HomePage.module.scss */
 
-@use '../_variables.scss'as vars;
-
 .homePage {
-  margin: 0; // Remove default margins
-  padding: 0; // Remove default padding
+  background-color: var(--bg-color); // Dynamic background color
+  color: var(--text-color); // Dynamic text color
+  transition: background-color 0.3s ease, color 0.3s ease; // Smooth transition
+  min-height: 100vh; // Full viewport height
+  width: 99vw; // Full viewport width
+  overflow: hidden; // Hide vertical scrollbar
 }
 
-/* Banner Section */
 .banner {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh; // Full viewport height
-  width: 100vw; // Full viewport width
-  overflow: hidden; // Prevent unintended scrolling or layout issues
+  width: 100%; // Full viewport width
+  overflow: hidden;
 
   .bannerContent {
     text-align: center;
@@ -23,15 +24,28 @@
 
     .bannerHeading {
       font-family: "Vastago Grotesk", sans-serif;
-      font-size: 8vw;
+      font-size: 8vw; // Responsive font size based on viewport width
       font-weight: bold;
-      color: #ffffff;
+      color: var(--text-color); // Dynamic text color
       margin: 0;
-      line-height: 1.2;
+      line-height: 1.2; // Tight line height for better readability
 
       @media (max-width: 768px) {
-        font-size: 12vw;
+        font-size: 12vw; // Larger font size for smaller screens
       }
     }
+  }
+}
+
+.flowingMenuSection {
+  position: relative;
+  width: 100%;
+  height: 50vh; // Adjust height as needed
+  background-color: var(--bg-color); // Dynamic background color
+  margin-top: 4rem; // Add space above the FlowingMenu
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: auto; // Allow height to adjust for smaller screens
   }
 }

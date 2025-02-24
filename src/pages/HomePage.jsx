@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./HomePage.module.scss";
 import WAVES from "vanta/dist/vanta.waves.min"; // Import the Waves effect
+import FlowingMenu from "../blocks/Components/FlowingMenu/FlowingMenu"; // Import FlowingMenu
 
 export default function HomePage() {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -27,6 +28,29 @@ export default function HomePage() {
     };
   }, [vantaEffect]);
 
+  const menuItems = [
+    {
+      link: "#",
+      text: "Engaging designs",
+      image: "https://picsum.photos/600/400?random=1",
+    },
+    {
+      link: "#",
+      text: "Seamless experience",
+      image: "https://picsum.photos/600/400?random=2",
+    },
+    {
+      link: "#",
+      text: "Memorable branding",
+      image: "https://picsum.photos/600/400?random=3",
+    },
+    {
+      link: "#",
+      text: "Refined simplicity",
+      image: "https://picsum.photos/600/400?random=4",
+    },
+  ];
+
   return (
     <div className={styles.homePage}>
       {/* Banner Section */}
@@ -38,8 +62,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Rest of the Page */}
-      {/* Add other sections here */}
+      {/* Flowing Menu Section */}
+      <section className={styles.flowingMenuSection}>
+        <FlowingMenu items={menuItems} />
+      </section>
     </div>
   );
 }
